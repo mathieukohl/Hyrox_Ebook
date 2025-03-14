@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Hyrox_Ebook/sw.js', { scope: '/Hyrox_Ebook/' })})}
