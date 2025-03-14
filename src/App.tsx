@@ -55,7 +55,7 @@ const App: React.FC = () => (
     <IonReactRouter basename="/Hyrox_Ebook">
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/" component={Introduction} />
+          <Route exact path="/introduction" component={Introduction} />
           <Route exact path="/understanding" component={Understanding} />
           <Route exact path="/training" component={TrainingProgram} />
           <Route exact path="/training/phase1" component={Phase1} />
