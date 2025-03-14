@@ -1,33 +1,38 @@
 {
   "name": "hyrox-ebook",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "homepage": "https://mathieukohl.github.io/Hyrox_Ebook",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@ionic/react": "^7.6.5",
     "@ionic/core": "^7.6.5",
+    "@ionic/react": "^7.6.5",
     "@ionic/react-router": "^7.6.5",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "firebase": "^10.8.0",
+    "history": "^4.10.1",
+    "ionicons": "^7.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4",
-    "history": "^4.10.1",
-    "ionicons": "^7.2.2",
-    "@types/react-router": "^5.1.20",
-    "@types/react-router-dom": "^5.3.3"
+    "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.3.3",
     "vite": "^5.1.0",
     "vite-plugin-pwa": "^0.19.0"
   }
-} 
+}
