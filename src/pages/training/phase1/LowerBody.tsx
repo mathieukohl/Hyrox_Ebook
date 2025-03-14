@@ -171,11 +171,11 @@ const LowerBody: React.FC = () => {
                       <IonCardTitle>{option.name}</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
-                      <IonBadge color="secondary">
+                      <IonBadge>
                         <IonIcon icon={timeOutline} />
                         {option.rest}
                       </IonBadge>
-                      <IonBadge color="primary">
+                      <IonBadge>
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>
@@ -208,9 +208,18 @@ const LowerBody: React.FC = () => {
                         <IonItem key={index}>
                           <IonLabel>
                             <h3>{exercise.name}</h3>
-                            <IonBadge color="primary">
-                              {exercise.sets} x {exercise.reps} répétitions
-                            </IonBadge>
+                            <div className="exercise-details">
+                              {exercise.reps > 0 && (
+                                <IonBadge>
+                                  {exercise.sets} x {exercise.reps} répétitions
+                                </IonBadge>
+                              )}
+                              {exercise.reps === 0 && (
+                                <IonBadge>
+                                  {exercise.sets} séries
+                                </IonBadge>
+                              )}
+                            </div>
                             {exercise.note && (
                               <p className="ion-text-wrap note">
                                 <IonIcon icon={checkmarkCircleOutline} />

@@ -172,11 +172,11 @@ const LowerBody: React.FC = () => {
                       <IonCardTitle>{option.name}</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
-                      <IonBadge color="secondary">
+                      <IonBadge>
                         <IonIcon icon={timeOutline} />
                         {option.rest}
                       </IonBadge>
-                      <IonBadge color="primary">
+                      <IonBadge>
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>
@@ -209,21 +209,23 @@ const LowerBody: React.FC = () => {
                         <IonItem key={index}>
                           <IonLabel>
                             <h3>{exercise.name}</h3>
-                            {typeof exercise.reps === 'number' && exercise.reps > 0 && (
-                              <IonBadge color="primary">
-                                {exercise.sets} x {exercise.reps} répétitions
-                              </IonBadge>
-                            )}
-                            {typeof exercise.reps === 'string' && (
-                              <IonBadge color="primary">
-                                {exercise.sets} x {exercise.reps}
-                              </IonBadge>
-                            )}
-                            {exercise.reps === 0 && (
-                              <IonBadge color="primary">
-                                {exercise.note}
-                              </IonBadge>
-                            )}
+                            <div className="exercise-details">
+                              {typeof exercise.reps === 'number' && exercise.reps > 0 && (
+                                <IonBadge>
+                                  {exercise.sets} x {exercise.reps} répétitions
+                                </IonBadge>
+                              )}
+                              {typeof exercise.reps === 'string' && (
+                                <IonBadge>
+                                  {exercise.sets} x {exercise.reps}
+                                </IonBadge>
+                              )}
+                              {typeof exercise.reps === 'number' && exercise.reps === 0 && (
+                                <IonBadge>
+                                  {exercise.sets} séries
+                                </IonBadge>
+                              )}
+                            </div>
                             {exercise.note && exercise.reps !== 0 && (
                               <p className="ion-text-wrap note">
                                 <IonIcon icon={checkmarkCircleOutline} />
