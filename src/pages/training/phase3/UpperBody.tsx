@@ -179,11 +179,11 @@ const UpperBody: React.FC = () => {
                       <IonCardTitle>{option.name}</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
-                      <IonBadge color="secondary">
+                      <IonBadge>
                         <IonIcon icon={timeOutline} />
                         {option.rest}
                       </IonBadge>
-                      <IonBadge color="primary">
+                      <IonBadge>
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>

@@ -122,7 +122,7 @@ const Phase3: React.FC = () => {
                               <h3>{day.day}</h3>
                               <p>{day.activity}</p>
                               {day.duration && !day.link && (
-                                <IonBadge color="secondary">
+                                <IonBadge>
                                   <IonIcon icon={timeOutline} />
                                   {day.duration}
                                 </IonBadge>
