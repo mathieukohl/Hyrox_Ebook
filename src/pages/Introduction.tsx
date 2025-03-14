@@ -21,6 +21,7 @@ import {
 } from '@ionic/react';
 import { arrowForward, fitness, trophy, time, heart } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
+import hyroxLogo from '../assets/hyrox_logo.png';
 
 const Introduction: React.FC = () => {
   const history = useHistory();
@@ -36,7 +37,7 @@ const Introduction: React.FC = () => {
         <IonCard className="hero-card">
           <IonCardHeader className="ion-text-center">
             <IonAvatar className="hero-avatar">
-              <img src="/assets/hyrox-logo.png" alt="HYROX Logo" />
+              <img src={hyroxLogo} alt="HYROX Logo" />
             </IonAvatar>
             <IonCardTitle className="ion-padding-top">Bienvenue dans l'Entraînement HYROX</IonCardTitle>
             <IonCardSubtitle>Votre Guide Complet vers la Réussite</IonCardSubtitle>
@@ -99,19 +100,6 @@ const Introduction: React.FC = () => {
                     <IonLabel>
                       <h3>Planning Flexible</h3>
                       <p>Adaptez à votre emploi du temps</p>
-                    </IonLabel>
-                  </IonItem>
-                </IonCardContent>
-              </IonCard>
-            </IonCol>
-            <IonCol size="12" sizeMd="6" sizeLg="3">
-              <IonCard className="feature-card">
-                <IonCardContent>
-                  <IonItem lines="none">
-                    <IonIcon slot="start" icon={heart} className="feature-icon" />
-                    <IonLabel>
-                      <h3>Suivi Progression</h3>
-                      <p>Mesurez vos améliorations</p>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>

@@ -96,7 +96,7 @@ const TrainingProgram: React.FC = () => {
             </IonCol>
           </IonRow>
           {phases.map((phase, index) => (
-            <IonRow key={index}>
+            <IonRow key={index} className={"ion-margin-bottom"}>
               <IonCol size="12">
                 <IonCard className="phase-card">
                   <IonCardHeader>
@@ -120,48 +120,6 @@ const TrainingProgram: React.FC = () => {
             </IonRow>
           ))}
         </IonGrid>
-
-        <IonCard className="ion-margin-top">
-          <IonCardHeader>
-            <IonCardTitle>Planning Hebdomadaire</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonList>
-              <IonItem>
-                <IonIcon slot="start" icon={timeOutline} />
-                <IonLabel>
-                  <h3>Lundi</h3>
-                  <p>Entraînement Force</p>
-                  <IonChip color="secondary">60 min</IonChip>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonIcon slot="start" icon={timeOutline} />
-                <IonLabel>
-                  <h3>Mercredi</h3>
-                  <p>Course + Fonctionnel</p>
-                  <IonChip color="secondary">75 min</IonChip>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonIcon slot="start" icon={timeOutline} />
-                <IonLabel>
-                  <h3>Vendredi</h3>
-                  <p>Entraînement Force</p>
-                  <IonChip color="secondary">60 min</IonChip>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonIcon slot="start" icon={timeOutline} />
-                <IonLabel>
-                  <h3>Samedi</h3>
-                  <p>Course Longue + Simulation</p>
-                  <IonChip color="secondary">90 min</IonChip>
-                </IonLabel>
-              </IonItem>
-            </IonList>
-          </IonCardContent>
-        </IonCard>
       </IonContent>
     </IonPage>
   );

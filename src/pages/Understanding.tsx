@@ -132,39 +132,6 @@ const Understanding: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
-
-        <IonCard className="ion-margin-top">
-          <IonCardHeader>
-            <IonCardTitle>Format de Course</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonList>
-              <IonItem>
-                <IonLabel>
-                  <h3>Structure de Base</h3>
-                  <p>8 tours de 1km de course</p>
-                  <p>8 stations d'exercices fonctionnels</p>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonLabel>
-                  <h3>Exercices Standards</h3>
-                  <p>Poussées de traîneau</p>
-                  <p>Wall balls</p>
-                  <p>Burpees</p>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonLabel>
-                  <h3>Divisions</h3>
-                  <p>Pro</p>
-                  <p>Open</p>
-                  <p>Relais</p>
-                </IonLabel>
-              </IonItem>
-            </IonList>
-          </IonCardContent>
-        </IonCard>
       </IonContent>
     </IonPage>
   );

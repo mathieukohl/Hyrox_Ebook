@@ -62,7 +62,7 @@ const Competition: React.FC = () => {
             </IonCol>
           </IonRow>
           <IonRow>
-            <IonCol size="12" sizeMd="6">
+            <IonCol size="12" sizeMd="6" className={"ion-margin-bottom"}>
               <IonCard className="checklist-card">
                 <IonCardHeader>
                   <IonCardTitle>Équipement</IonCardTitle>
@@ -86,27 +86,11 @@ const Competition: React.FC = () => {
                         </IonLabel>
                       </IonCheckbox>
                     </IonItem>
-                    <IonItem>
-                      <IonCheckbox aria-label="Gants">
-                        <IonLabel>
-                          <h3>Gants</h3>
-                          <p>Pour les exercices fonctionnels</p>
-                        </IonLabel>
-                      </IonCheckbox>
-                    </IonItem>
-                    <IonItem>
-                      <IonCheckbox aria-label="Serviette">
-                        <IonLabel>
-                          <h3>Serviette</h3>
-                          <p>Pour la transpiration</p>
-                        </IonLabel>
-                      </IonCheckbox>
-                    </IonItem>
                   </IonList>
                 </IonCardContent>
               </IonCard>
             </IonCol>
-            <IonCol size="12" sizeMd="6">
+            <IonCol size="12" sizeMd="6" className={"ion-margin-bottom"}>
               <IonCard className="checklist-card">
                 <IonCardHeader>
                   <IonCardTitle>Nutrition</IonCardTitle>
