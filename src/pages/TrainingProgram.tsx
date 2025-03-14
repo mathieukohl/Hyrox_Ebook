@@ -24,7 +24,16 @@ import {
 } from '@ionic/react';
 import { calendarOutline, barbellOutline, trophyOutline, timeOutline, fitnessOutline, heartOutline, arrowForwardOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
-import { Phase } from '../types/training';
+
+interface Phase {
+  title: string;
+  subtitle: string;
+  description: string;
+  progress: number;
+  path: string;
+  weekNumber?: number;
+  days?: string[];
+}
 
 const TrainingProgram: React.FC = () => {
   const history = useHistory();
@@ -32,24 +41,30 @@ const TrainingProgram: React.FC = () => {
   const phases: Phase[] = [
     {
       title: 'Phase 1 : Fondation',
-      subtitle: '4 semaines',
-      description: 'Construction des bases et adaptation du corps',
-      progress: 0.33,
-      path: '/training/phase1'
+      subtitle: 'Construire les bases',
+      description: 'Développez votre endurance et votre force de base',
+      progress: 0,
+      path: '/training/phase1',
+      weekNumber: 4,
+      days: ['Lundi', 'Mercredi', 'Vendredi']
     },
     {
       title: 'Phase 2 : Développement',
-      subtitle: '4 semaines',
-      description: 'Intensification et développement des compétences',
-      progress: 0.66,
-      path: '/training/phase2'
+      subtitle: 'Augmenter l\'intensité',
+      description: 'Améliorez votre performance et votre résistance',
+      progress: 0,
+      path: '/training/phase2',
+      weekNumber: 4,
+      days: ['Lundi', 'Mercredi', 'Vendredi']
     },
     {
       title: 'Phase 3 : Performance',
-      subtitle: '4 semaines',
-      description: 'Optimisation et préparation à la compétition',
-      progress: 1,
-      path: '/training/phase3'
+      subtitle: 'Affiner la préparation',
+      description: 'Optimisez votre performance pour la compétition',
+      progress: 0,
+      path: '/training/phase3',
+      weekNumber: 4,
+      days: ['Lundi', 'Mercredi', 'Vendredi']
     }
   ];
 
