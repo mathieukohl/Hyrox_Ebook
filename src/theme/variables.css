@@ -2,12 +2,12 @@
 
 :root {
   /* Couleurs principales */
-  --ion-color-primary: #2C3E50;
-  --ion-color-primary-rgb: 44, 62, 80;
+  --ion-color-primary: #000000;
+  --ion-color-primary-rgb: 0, 0, 0;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #273746;
-  --ion-color-primary-tint: #415161;
+  --ion-color-primary-shade: #000000;
+  --ion-color-primary-tint: #1a1a1a;
 
   --ion-color-secondary: #34495E;
   --ion-color-secondary-rgb: 52, 73, 94;
@@ -63,7 +63,7 @@ ion-card {
 ion-card-header {
   padding: var(--ion-padding);
   background: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  color: #ffffff;
   border-radius: var(--ion-border-radius) var(--ion-border-radius) 0 0;
 }
 
@@ -71,11 +71,13 @@ ion-card-title {
   font-size: var(--ion-font-size-xl);
   font-weight: 600;
   margin-bottom: 8px;
+  color: inherit;
 }
 
 ion-card-subtitle {
   font-size: var(--ion-font-size-base);
   opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 ion-card-content {
@@ -249,7 +251,7 @@ ion-icon {
 
 .phase-card ion-card-header {
   background: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  color: #ffffff;
   padding: var(--ion-padding);
   border-radius: var(--ion-border-radius) var(--ion-border-radius) 0 0;
 }
@@ -257,12 +259,14 @@ ion-icon {
 .phase-card ion-card-title {
   font-size: var(--ion-font-size-xl);
   margin-bottom: 4px;
+  color: #ffffff;
 }
 
 .phase-card ion-card-subtitle {
   font-size: var(--ion-font-size-base);
   opacity: 0.9;
   margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .phase-card ion-card-content {
@@ -336,7 +340,7 @@ ion-chip {
 
 .checklist-card ion-card-header {
   background: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  color: #ffffff;
   padding: var(--ion-padding);
   border-radius: var(--ion-border-radius) var(--ion-border-radius) 0 0;
 }
@@ -344,12 +348,14 @@ ion-chip {
 .checklist-card ion-card-title {
   font-size: var(--ion-font-size-xl);
   margin-bottom: 4px;
+  color: #ffffff;
 }
 
 .checklist-card ion-card-subtitle {
   font-size: var(--ion-font-size-base);
   opacity: 0.9;
   margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .checklist-card ion-card-content {
