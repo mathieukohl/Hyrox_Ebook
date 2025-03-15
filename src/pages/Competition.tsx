@@ -19,11 +19,37 @@ import {
   IonCol,
   IonChip,
   IonBadge,
-  IonCheckbox
+  IonCheckbox,
+  IonButton,
+  useIonToast
 } from '@ionic/react';
-import { listOutline, trophyOutline, timeOutline, heartOutline, nutritionOutline, waterOutline } from 'ionicons/icons';
+import { listOutline, trophyOutline, timeOutline, heartOutline, nutritionOutline, waterOutline, logOutOutline } from 'ionicons/icons';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase/config';
+import { useHistory } from 'react-router-dom';
 
 const Competition: React.FC = () => {
+  const [present] = useIonToast();
+  const history = useHistory();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      present({
+        message: 'Déconnexion réussie',
+        duration: 2000,
+        color: 'success'
+      });
+      history.push('/login');
+    } catch (error) {
+      present({
+        message: 'Erreur lors de la déconnexion',
+        duration: 3000,
+        color: 'danger'
+      });
+    }
+  };
+
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
@@ -178,6 +204,18 @@ const Competition: React.FC = () => {
             </IonList>
           </IonCardContent>
         </IonCard>
+
+        <div className="ion-text-center ion-padding">
+          <IonButton 
+            expand="block" 
+            color="medium" 
+            fill="clear"
+            onClick={handleLogout}
+          >
+            <IonIcon slot="start" icon={logOutOutline} />
+            Se déconnecter
+          </IonButton>
+        </div>
       </IonContent>
     </IonPage>
   );

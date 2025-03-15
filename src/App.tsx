@@ -12,6 +12,9 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { calendarOutline, trophyOutline, fitnessOutline } from 'ionicons/icons';
+
+// Pages
+import Login from './pages/Login';
 import Introduction from './pages/Introduction';
 import Understanding from './pages/Understanding';
 import TrainingProgram from './pages/TrainingProgram';
@@ -28,6 +31,13 @@ import HyroxSpecificPhase2 from './pages/training/phase2/HyroxSpecific';
 import UpperBodyPhase3 from './pages/training/phase3/UpperBody';
 import LowerBodyPhase3 from './pages/training/phase3/LowerBody';
 import HyroxSpecificPhase3 from './pages/training/phase3/HyroxSpecific';
+
+// Components
+import Header from './components/Header';
+
+// Auth
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -51,52 +61,212 @@ import './theme/training.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
+const AppContent: React.FC = () => {
+  const { currentUser } = useAuth();
+
+  const PrivateLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+    <>
+      <Header />
+      {children}
+    </>
+  );
+
+  return (
     <IonReactRouter basename="/Hyrox_Ebook">
-      <IonTabs>
+      {currentUser ? (
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute 
+              exact 
+              path="/introduction" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Introduction {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/understanding" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Understanding {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <TrainingProgram {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase1" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Phase1 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase1/upper-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <UpperBodyPhase1 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase1/lower-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <LowerBodyPhase1 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase1/hyrox-specific" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <HyroxSpecificPhase1 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase2" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Phase2 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase2/upper-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <UpperBodyPhase2 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase2/lower-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <LowerBodyPhase2 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase2/hyrox-specific" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <HyroxSpecificPhase2 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase3" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Phase3 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase3/upper-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <UpperBodyPhase3 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase3/lower-body" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <LowerBodyPhase3 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/training/phase3/hyrox-specific" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <HyroxSpecificPhase3 {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/competition" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Competition {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <Route exact path="/">
+              <Redirect to="/introduction" />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="introduction" href="/introduction">
+              <IonIcon icon={calendarOutline} />
+              <IonLabel>Introduction</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="understanding" href="/understanding">
+              <IonIcon icon={fitnessOutline} />
+              <IonLabel>Comprendre</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="training" href="/training">
+              <IonIcon icon={fitnessOutline} />
+              <IonLabel>Entraînement</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="competition" href="/competition">
+              <IonIcon icon={trophyOutline} />
+              <IonLabel>Course</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      ) : (
         <IonRouterOutlet>
-          <Route exact path="/introduction" component={Introduction} />
-          <Route exact path="/understanding" component={Understanding} />
-          <Route exact path="/training" component={TrainingProgram} />
-          <Route exact path="/training/phase1" component={Phase1} />
-          <Route exact path="/training/phase1/upper-body" component={UpperBodyPhase1} />
-          <Route exact path="/training/phase1/lower-body" component={LowerBodyPhase1} />
-          <Route exact path="/training/phase1/hyrox-specific" component={HyroxSpecificPhase1} />
-          <Route exact path="/training/phase2" component={Phase2} />
-          <Route exact path="/training/phase2/upper-body" component={UpperBodyPhase2} />
-          <Route exact path="/training/phase2/lower-body" component={LowerBodyPhase2} />
-          <Route exact path="/training/phase2/hyrox-specific" component={HyroxSpecificPhase2} />
-          <Route exact path="/training/phase3" component={Phase3} />
-          <Route exact path="/training/phase3/upper-body" component={UpperBodyPhase3} />
-          <Route exact path="/training/phase3/lower-body" component={LowerBodyPhase3} />
-          <Route exact path="/training/phase3/hyrox-specific" component={HyroxSpecificPhase3} />
-          <Route exact path="/competition" component={Competition} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/">
-            <Redirect to="/introduction" />
+            <Redirect to="/login" />
+          </Route>
+          <Route>
+            <Redirect to="/login" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="introduction" href="/introduction">
-            <IonIcon icon={calendarOutline} />
-            <IonLabel>Introduction</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="understanding" href="/understanding">
-            <IonIcon icon={fitnessOutline} />
-            <IonLabel>Comprendre</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="training" href="/training">
-            <IonIcon icon={fitnessOutline} />
-            <IonLabel>Entraînement</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="competition" href="/competition">
-            <IonIcon icon={trophyOutline} />
-            <IonLabel>Course</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
+      )}
     </IonReactRouter>
-  </IonApp>
-);
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <IonApp>
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </IonApp>
+  );
+};
 
 export default App; 
