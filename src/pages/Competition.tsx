@@ -69,11 +69,11 @@ const Competition: React.FC = () => {
               Suivez ce guide pour vous assurer d'être parfaitement préparé.
             </p>
             <div className="ion-text-center">
-              <IonChip color="secondary">
+              <IonChip >
                 <IonIcon icon={timeOutline} />
                 <IonLabel>Arrivez 2h avant</IonLabel>
               </IonChip>
-              <IonChip color="secondary">
+              <IonChip >
                 <IonIcon icon={trophyOutline} />
                 <IonLabel>Objectif atteignable</IonLabel>
               </IonChip>
@@ -174,7 +174,7 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Pace de Course</h3>
                   <p>Maintenez un rythme régulier</p>
-                  <IonBadge color="secondary">Rythme constant</IonBadge>
+                  <IonBadge >Rythme constant</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -182,7 +182,7 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Gestion de l'Effort</h3>
                   <p>Répartissez votre énergie</p>
-                  <IonBadge color="secondary">80% effort</IonBadge>
+                  <IonBadge >80% effort</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -190,7 +190,7 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Nutrition</h3>
                   <p>Hydratation régulière</p>
-                  <IonBadge color="secondary">Toutes les 20min</IonBadge>
+                  <IonBadge >Toutes les 20min</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -198,7 +198,7 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Objectifs</h3>
                   <p>Fixez des repères</p>
-                  <IonBadge color="secondary">Par section</IonBadge>
+                  <IonBadge >Par section</IonBadge>
                 </IonLabel>
               </IonItem>
             </IonList>

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-interface PrivateRouteProps extends RouteProps {
+interface PrivateRouteProps {
   component: React.ComponentType<any>;
+  path: string;
+  exact?: boolean;
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component, ...rest }) => {
@@ -13,7 +15,11 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component, ...re
     <Route
       {...rest}
       render={props => {
-        return currentUser ? <Component {...props} /> : <Redirect to="/login" />;
+        if (!currentUser) {
+          return <Redirect to="/login" />;
+        }
+
+        return <Component {...props} />;
       }}
     />
   );

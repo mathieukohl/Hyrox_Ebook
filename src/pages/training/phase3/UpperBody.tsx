@@ -217,17 +217,17 @@ const UpperBody: React.FC = () => {
                           <IonLabel>
                             <h3>{exercise.name}</h3>
                             {typeof exercise.reps === 'number' && exercise.reps > 0 && (
-                              <IonBadge color="primary">
+                              <IonBadge >
                                 {exercise.sets} x {exercise.reps} répétitions
                               </IonBadge>
                             )}
                             {typeof exercise.reps === 'string' && (
-                              <IonBadge color="primary">
+                              <IonBadge >
                                 {exercise.sets} séries de {exercise.reps} répétitions
                               </IonBadge>
                             )}
                             {exercise.reps === 0 && (
-                              <IonBadge color="primary">
+                              <IonBadge >
                                 {exercise.sets} séries
                               </IonBadge>
                             )}

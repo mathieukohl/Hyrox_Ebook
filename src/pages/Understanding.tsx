@@ -44,11 +44,11 @@ const Understanding: React.FC = () => {
               teste à la fois votre endurance et votre force fonctionnelle.
             </p>
             <div className="ion-text-center">
-              <IonChip color="secondary">
+              <IonChip >
                 <IonIcon icon={timeOutline} />
                 <IonLabel>60-90 minutes</IonLabel>
               </IonChip>
-              <IonChip color="secondary">
+              <IonChip >
                 <IonIcon icon={speedometerOutline} />
                 <IonLabel>8 km total</IonLabel>
               </IonChip>
@@ -74,7 +74,7 @@ const Understanding: React.FC = () => {
                         Développer la force dans des mouvements qui se transfèrent aux
                         activités de la vie quotidienne
                       </p>
-                      <IonBadge color="secondary">8 stations</IonBadge>
+                      <IonBadge >8 stations</IonBadge>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>
@@ -91,7 +91,7 @@ const Understanding: React.FC = () => {
                         Construire la condition physique cardiovasculaire à travers la course
                         et l'effort soutenu
                       </p>
-                      <IonBadge color="secondary">8 km</IonBadge>
+                      <IonBadge >8 km</IonBadge>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>
@@ -107,7 +107,7 @@ const Understanding: React.FC = () => {
                       <p>
                         Maîtriser la bonne forme pour des mouvements efficaces et sûrs
                       </p>
-                      <IonBadge color="secondary">Optimisation</IonBadge>
+                      <IonBadge >Optimisation</IonBadge>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>
@@ -124,7 +124,7 @@ const Understanding: React.FC = () => {
                         Développer la résilience et la force mentale pour surmonter
                         les défis
                       </p>
-                      <IonBadge color="secondary">Mental</IonBadge>
+                      <IonBadge >Mental</IonBadge>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>

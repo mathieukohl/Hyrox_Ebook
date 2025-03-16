@@ -367,11 +367,11 @@ const HyroxSpecific: React.FC = () => {
                         <IonIcon icon={timeOutline} />
                         {option.rest}
                       </IonBadge>
-                      <IonBadge color="primary">
+                      <IonBadge >
                         {option.exercises.length} exercices
                       </IonBadge>
                       {option.duration && (
-                        <IonBadge color="tertiary">
+                        <IonBadge >
                           {option.duration}
                         </IonBadge>
                       )}
@@ -414,12 +414,12 @@ const HyroxSpecific: React.FC = () => {
                           <IonLabel>
                             <h3>{exercise.name}</h3>
                             {exercise.reps > 0 && (
-                              <IonBadge color="primary">
+                              <IonBadge >
                                 {exercise.reps} {exercise.name.includes('mètres') ? 'm' : 'répétitions'}
                               </IonBadge>
                             )}
                             {exercise.reps === 0 && (
-                              <IonBadge color="primary">
+                              <IonBadge >
                                 {exercise.note?.includes('minutes') || exercise.note?.includes('secondes') ? exercise.note : 'Séries'}
                               </IonBadge>
                             )}

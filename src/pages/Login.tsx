@@ -13,9 +13,13 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  useIonToast
+  useIonToast,
 } from '@ionic/react';
-import { signInWithEmailAndPassword, AuthError } from 'firebase/auth';
+import { 
+  signInWithEmailAndPassword, 
+  AuthError,
+  sendPasswordResetEmail
+} from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useHistory } from 'react-router-dom';
 
@@ -24,31 +28,6 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [present] = useIonToast();
   const history = useHistory();
-
-  const getErrorMessage = (error: AuthError) => {
-    switch (error.code) {
-      case 'auth/invalid-email':
-        return 'Adresse email invalide';
-      case 'auth/user-disabled':
-        return 'Ce compte a été désactivé';
-      case 'auth/user-not-found':
-        return 'Aucun compte ne correspond à cette adresse email';
-      case 'auth/wrong-password':
-        return 'Mot de passe incorrect';
-      case 'auth/too-many-requests':
-        return 'Trop de tentatives de connexion. Veuillez réessayer plus tard';
-      default:
-        return 'Une erreur est survenue lors de la connexion';
-    }
-  };
-
-  const handleEmailChange = (value: string | null | undefined) => {
-    setEmail(value || '');
-  };
-
-  const handlePasswordChange = (value: string | null | undefined) => {
-    setPassword(value || '');
-  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,7 +51,7 @@ const Login: React.FC = () => {
         duration: 2000,
         color: 'success'
       });
-      history.push('/introduction');
+      history.replace('/introduction');
     } catch (error: any) {
       present({
         message: getErrorMessage(error),
@@ -80,6 +59,52 @@ const Login: React.FC = () => {
         color: 'danger'
       });
       console.error('Erreur de connexion:', error);
+    }
+  };
+
+  const handleResetPassword = async () => {
+    const trimmedEmail = email.trim();
+    
+    if (!trimmedEmail) {
+      present({
+        message: 'Veuillez entrer votre adresse email',
+        duration: 3000,
+        color: 'warning'
+      });
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, trimmedEmail);
+      present({
+        message: 'Un email de réinitialisation a été envoyé',
+        duration: 3000,
+        color: 'success'
+      });
+    } catch (error: any) {
+      present({
+        message: getErrorMessage(error),
+        duration: 3000,
+        color: 'danger'
+      });
+      console.error('Erreur de réinitialisation:', error);
+    }
+  };
+
+  const getErrorMessage = (error: AuthError) => {
+    switch (error.code) {
+      case 'auth/invalid-email':
+        return 'Adresse email invalide';
+      case 'auth/user-disabled':
+        return 'Ce compte a été désactivé';
+      case 'auth/user-not-found':
+        return 'Aucun compte ne correspond à cette adresse email';
+      case 'auth/wrong-password':
+        return 'Mot de passe incorrect';
+      case 'auth/too-many-requests':
+        return 'Trop de tentatives de connexion. Veuillez réessayer plus tard';
+      default:
+        return 'Une erreur est survenue lors de la connexion';
     }
   };
 
@@ -106,7 +131,7 @@ const Login: React.FC = () => {
                         label="Email"
                         labelPlacement="floating"
                         value={email}
-                        onIonInput={e => handleEmailChange(e.detail.value)}
+                        onIonInput={e => setEmail(e.detail.value || '')}
                         required
                         clearInput
                       />
@@ -117,13 +142,20 @@ const Login: React.FC = () => {
                         label="Mot de passe"
                         labelPlacement="floating"
                         value={password}
-                        onIonInput={e => handlePasswordChange(e.detail.value)}
+                        onIonInput={e => setPassword(e.detail.value || '')}
                         required
                         clearInput
                       />
                     </IonItem>
-                    <IonButton expand="block" type="submit">
+                    <IonButton expand="block" type="submit" className="ion-margin-bottom">
                       Se connecter
+                    </IonButton>
+                    <IonButton 
+                      expand="block" 
+                      fill="outline" 
+                      onClick={handleResetPassword}
+                    >
+                      Réinitialiser le mot de passe
                     </IonButton>
                   </form>
                 </IonCardContent>

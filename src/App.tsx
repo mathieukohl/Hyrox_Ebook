@@ -11,7 +11,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { calendarOutline, trophyOutline, fitnessOutline } from 'ionicons/icons';
+import { calendarOutline, trophyOutline, fitnessOutline, settingsOutline } from 'ionicons/icons';
 
 // Pages
 import Login from './pages/Login';
@@ -31,6 +31,7 @@ import HyroxSpecificPhase2 from './pages/training/phase2/HyroxSpecific';
 import UpperBodyPhase3 from './pages/training/phase3/UpperBody';
 import LowerBodyPhase3 from './pages/training/phase3/LowerBody';
 import HyroxSpecificPhase3 from './pages/training/phase3/HyroxSpecific';
+import AdminPanel from './pages/AdminPanel';
 
 // Components
 import Header from './components/Header';
@@ -76,7 +77,15 @@ const AppContent: React.FC = () => {
       {currentUser ? (
         <IonTabs>
           <IonRouterOutlet>
-            <Route exact path="/login" component={Login} />
+            <PrivateRoute 
+              exact 
+              path="/admin"
+              component={(props: any) => (
+                <PrivateLayout>
+                  <AdminPanel {...props} />
+                </PrivateLayout>
+              )} 
+            />
             <PrivateRoute 
               exact 
               path="/introduction" 
@@ -221,11 +230,14 @@ const AppContent: React.FC = () => {
                 </PrivateLayout>
               )} 
             />
-            <Route exact path="/">
-              <Redirect to="/introduction" />
-            </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
+            {currentUser?.email === 'adminhyrox@gmail.com' && (
+              <IonTabButton tab="admin" href="/admin">
+                <IonIcon icon={settingsOutline} />
+                <IonLabel>Admin</IonLabel>
+              </IonTabButton>
+            )}
             <IonTabButton tab="introduction" href="/introduction">
               <IonIcon icon={calendarOutline} />
               <IonLabel>Introduction</IonLabel>
@@ -246,9 +258,8 @@ const AppContent: React.FC = () => {
         </IonTabs>
       ) : (
         <IonRouterOutlet>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/">
-            <Redirect to="/login" />
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <Redirect to="/login" />
