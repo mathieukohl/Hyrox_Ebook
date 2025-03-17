@@ -29,7 +29,6 @@ interface Phase {
   title: string;
   subtitle: string;
   description: string;
-  progress: number;
   path: string;
   weekNumber?: number;
   days?: string[];
@@ -43,7 +42,6 @@ const TrainingProgram: React.FC = () => {
       title: 'Phase 1 : Fondation',
       subtitle: 'Construire les bases',
       description: 'Développez votre endurance et votre force de base',
-      progress: 0,
       path: '/training/phase1',
       weekNumber: 4,
       days: ['Lundi', 'Mercredi', 'Vendredi']
@@ -52,7 +50,6 @@ const TrainingProgram: React.FC = () => {
       title: 'Phase 2 : Développement',
       subtitle: 'Augmenter l\'intensité',
       description: 'Améliorez votre performance et votre résistance',
-      progress: 0,
       path: '/training/phase2',
       weekNumber: 4,
       days: ['Lundi', 'Mercredi', 'Vendredi']
@@ -61,7 +58,6 @@ const TrainingProgram: React.FC = () => {
       title: 'Phase 3 : Performance',
       subtitle: 'Affiner la préparation',
       description: 'Optimisez votre performance pour la compétition',
-      progress: 0,
       path: '/training/phase3',
       weekNumber: 4,
       days: ['Lundi', 'Mercredi', 'Vendredi']
@@ -105,7 +101,6 @@ const TrainingProgram: React.FC = () => {
                   </IonCardHeader>
                   <IonCardContent>
                     <p>{phase.description}</p>
-                    <IonProgressBar value={phase.progress}></IonProgressBar>
                     <IonButton 
                       expand="block" 
                       className="ion-margin-top"
