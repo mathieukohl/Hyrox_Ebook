@@ -21,13 +21,13 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
   name: string;
-  sets: number;
-  reps: number;
+  sets?: number;
+  reps?: number;
   rest?: string;
   note?: string;
 }
@@ -47,12 +47,11 @@ const HyroxSpecific: React.FC = () => {
     {
       name: 'Entraînement HYROX 1',
       duration: 'env. 30 min.',
-      rest: '1 min. entre les tours',
+      rest: '1 min de pause entre les tours',
       exercises: [
         {
           name: 'Course rapide',
           sets: 4,
-          reps: 400,
           note: '400 mètres'
         },
         {
@@ -63,13 +62,11 @@ const HyroxSpecific: React.FC = () => {
         {
           name: 'Rameur',
           sets: 4,
-          reps: 400,
           note: '400 mètres'
         },
         {
           name: 'Farmers Carry',
           sets: 4,
-          reps: 50,
           note: '50 mètres'
         }
       ]
@@ -77,7 +74,7 @@ const HyroxSpecific: React.FC = () => {
     {
       name: 'Entraînement HYROX 2',
       duration: 'env. 30 min.',
-      rest: '1 min. 30 entre les tours',
+      rest: '1 min 30 de pause entre les tours',
       exercises: [
         {
           name: 'Course à haute intensité',
@@ -145,18 +142,16 @@ const HyroxSpecific: React.FC = () => {
     {
       name: 'Entraînement HYROX 4',
       duration: 'env. 25 min.',
-      rest: '1 min. 30 entre les tours',
+      rest: '1 min 30 de pause entre les tours',
       exercises: [
         {
           name: 'Course rapide',
           sets: 4,
-          reps: 500,
           note: '500 mètres'
         },
         {
           name: 'Sled Push',
           sets: 4,
-          reps: 20,
           note: '20 mètres'
         },
         {
@@ -167,7 +162,6 @@ const HyroxSpecific: React.FC = () => {
         {
           name: 'Sled Pull',
           sets: 4,
-          reps: 20,
           note: '20 mètres'
         }
       ]
@@ -175,30 +169,26 @@ const HyroxSpecific: React.FC = () => {
     {
       name: 'Entraînement HYROX 5',
       duration: 'env. 30 min.',
-      rest: '2 min. entre les tours',
+      rest: '2 min de pause entre les tours',
       exercises: [
         {
           name: 'Course rapide',
           sets: 2,
-          reps: 600,
           note: '600 mètres'
         },
         {
           name: 'Ski Erg',
           sets: 2,
-          reps: 300,
           note: '300 mètres'
         },
         {
           name: 'Sled Push',
           sets: 2,
-          reps: 15,
           note: '15 mètres'
         },
         {
           name: 'Sled Pull',
           sets: 2,
-          reps: 15,
           note: '15 mètres'
         },
         {
@@ -209,13 +199,11 @@ const HyroxSpecific: React.FC = () => {
         {
           name: 'Rameur',
           sets: 2,
-          reps: 300,
           note: '300 mètres'
         },
         {
           name: 'Farmers Carry',
           sets: 2,
-          reps: 50,
           note: '50 mètres'
         },
         {
@@ -259,10 +247,7 @@ const HyroxSpecific: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge >
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
+                        <IonIcon icon={barbellOutline} />
                         {option.exercises.length} exercices
                       </IonBadge>
                       {option.duration && (
@@ -308,7 +293,7 @@ const HyroxSpecific: React.FC = () => {
                         <IonItem key={index}>
                           <IonLabel>
                             <h3>{exercise.name}</h3>
-                            {exercise.reps > 0 && (
+                            {exercise.reps !== undefined && exercise.reps > 0 && (
                               <IonBadge >
                                 {exercise.reps} {exercise.name.includes('mètres') ? 'm' : 'répétitions'}
                               </IonBadge>

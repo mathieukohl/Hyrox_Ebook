@@ -49,7 +49,7 @@ const Phase2: React.FC = () => {
         { day: 'Jeudi', activity: 'Entraînement spécifique HYROX', duration: '60 minutes', intensity: 'Modérée', link: '/training/phase2/hyrox-specific' },
         { day: 'Vendredi', activity: 'Renforcement du bas du corps', duration: '60 minutes', intensity: 'Modérée', link: '/training/phase2/lower-body' },
         { day: 'Samedi', activity: 'Récupération active', duration: '30 minutes', intensity: 'Légère', link: '' },
-        { day: 'Dimanche', activity: 'Intervalles', duration: '30 minutes', intensity: 'Élevée', description: '6 x 400m à effort élevé (respiration difficile, jambes brûlantes)', rest: '90s de récupération à l\'arrêt', link: '' }
+        { day: 'Dimanche', activity: 'Intervalles', duration: '30 minutes', intensity: 'Élevée', description: '6 x 400m à effort élevé (la respiration est difficile, vous ne pouvez parler qu’en mots très courts. Les jambes commencent à brûler)', rest: '90s de récupération à l\'arrêt', link: '' }
       ]
     },
     {

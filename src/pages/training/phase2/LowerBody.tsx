@@ -21,13 +21,13 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
   name: string;
-  sets: number;
-  reps: number | string;
+  sets?: number;
+  reps?: number | string;
   rest?: string;
   note?: string;
 }
@@ -46,7 +46,7 @@ const LowerBody: React.FC = () => {
   const trainingOptions: TrainingOption[] = [
     {
       name: 'Entraînement bas du corps 1',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -68,7 +68,7 @@ const LowerBody: React.FC = () => {
         {
           name: 'Presse à cuisses',
           sets: 4,
-          reps: '8 lourdes + 12 légères',
+          
           note: 'Bi-set : 8 répétitions lourdes suivies de 12 répétitions légères'
         },
         {
@@ -78,15 +78,13 @@ const LowerBody: React.FC = () => {
         },
         {
           name: 'Course vitesse Hyrox',
-          sets: 1,
-          reps: 0,
           note: '10 minutes'
         }
       ]
     },
     {
       name: 'Entraînement bas du corps 2',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -112,19 +110,16 @@ const LowerBody: React.FC = () => {
         {
           name: 'Extensions de jambes',
           sets: 4,
-          reps: '8 lourdes + 12 légères',
           note: 'Bi-set : 8 répétitions lourdes suivies de 12 répétitions légères'
         }
       ]
     },
     {
       name: 'Entraînement bas du corps 3',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Escaliers',
-          sets: 1,
-          reps: 0,
           note: '10 minutes'
         },
         {
@@ -152,8 +147,7 @@ const LowerBody: React.FC = () => {
         {
           name: 'Presse à cuisse',
           sets: 1,
-          reps: 50,
-          note: 'Partez de votre poids le plus lourd, faites le maximum de répétitions que vous pouvez, baissez le poids, faites le maximum que vous pouvez, baissez le poids, et continuez jusqu\'à atteindre les 50 répétitions'
+          note: '1 série de 50 répétitions (partez de votre poids le plus lourds, faites le maximum de répétitions que vous pouvez, baissez le poids, faites la maximum que vous pouvez, baissez le poids, et continuez jusqu’à atteindre les 50 répétitions.)'
         }
       ]
     }
@@ -186,10 +180,7 @@ const LowerBody: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge>
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
+                      <IonIcon icon={barbellOutline} />
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>

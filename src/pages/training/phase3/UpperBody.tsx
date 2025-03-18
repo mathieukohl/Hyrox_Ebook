@@ -21,13 +21,13 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
   name: string;
-  sets: number;
-  reps: number | string;
+  sets?: number;
+  reps?: number | string;
   rest?: string;
   note?: string;
 }
@@ -45,12 +45,11 @@ const UpperBody: React.FC = () => {
   const trainingOptions: TrainingOption[] = [
     {
       name: 'Entraînement haut du corps 1',
-      rest: '1 min. 30 à 2 min. entre chaque série',
+      rest: '1 min 30 à 2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Développé couché à la barre',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Série pyramidale : 1e série : 12 répétitions - 2e série : 10 - 3e série : 8 - 4e série : 6'
         },
         {
@@ -73,20 +72,17 @@ const UpperBody: React.FC = () => {
         },
         {
           name: 'Wall Ball unbroken',
-          sets: 4,
-          reps: 0,
-          note: 'Effectuez le maximum de répétitions sans interruption pour travailler la résistance musculaire du haut du corps.'
+          note: '4 X Effectuez le maximum de répétitions sans interruption pour travailler la résistance musculaire du haut du corps.'
         }
       ]
     },
     {
       name: 'Entraînement haut du corps 2',
-      rest: '1 min. 30 à 2 min. entre chaque série',
+      rest: '1 min 30 à 2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Développé couché à la barre',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Série pyramidale : 1e série : 12 répétitions - 2e série : 10 - 3e série : 8 - 4e série : 6'
         },
         {
@@ -110,14 +106,13 @@ const UpperBody: React.FC = () => {
         {
           name: 'Battle Ropes (corde ondulatoire)',
           sets: 4,
-          reps: 0,
-          note: '45 secondes par série'
+          note: '4 X 45 secondes par série'
         }
       ]
     },
     {
       name: 'Entraînement haut du corps 3',
-      rest: '1 min. 30 à 2 min. entre chaque série',
+      rest: '1 min 30 à 2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Développé couché à la barre',
@@ -146,8 +141,7 @@ const UpperBody: React.FC = () => {
         {
           name: 'Wall Ball unbroken',
           sets: 4,
-          reps: 0,
-          note: 'Effectuez le maximum de répétitions sans interruption pour travailler la résistance musculaire du haut du corps.'
+          note: '4 X Effectuez le maximum de répétitions sans interruption pour travailler la résistance musculaire du haut du corps.'
         }
       ]
     }
@@ -180,11 +174,8 @@ const UpperBody: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge>
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
-                        {option.exercises.length} exercices
+                        <IonIcon icon={barbellOutline} />
+                            {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>
                   </IonCard>

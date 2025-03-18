@@ -21,7 +21,7 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
@@ -46,7 +46,7 @@ const LowerBody: React.FC = () => {
   const trainingOptions: TrainingOption[] = [
     {
       name: 'Entraînement bas du corps 1',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -79,7 +79,7 @@ const LowerBody: React.FC = () => {
     },
     {
       name: 'Entraînement bas du corps 2',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -112,7 +112,7 @@ const LowerBody: React.FC = () => {
     },
     {
       name: 'Entraînement bas du corps 3',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -125,10 +125,9 @@ const LowerBody: React.FC = () => {
           reps: 12
         },
         {
-          name: 'Hip Thrusts',
+          name: 'Hip Thrusts (pont fessier)',
           sets: 3,
           reps: 15,
-          note: 'pont fessier'
         },
         {
           name: 'Fentes marchées',
@@ -136,10 +135,9 @@ const LowerBody: React.FC = () => {
           reps: 20
         },
         {
-          name: 'Mollets',
+          name: 'Mollets à la presse ou debout',
           sets: 3,
           reps: 15,
-          note: 'à la presse ou debout'
         }
       ]
     }
@@ -172,10 +170,7 @@ const LowerBody: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge>
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
+                      <IonIcon icon={barbellOutline} />
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>

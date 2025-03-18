@@ -21,7 +21,7 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
@@ -45,7 +45,7 @@ const UpperBody: React.FC = () => {
   const trainingOptions: TrainingOption[] = [
     {
       name: 'Entraînement haut du corps 1',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Développé couché à la barre',
@@ -76,7 +76,7 @@ const UpperBody: React.FC = () => {
     },
     {
       name: 'Entraînement haut du corps 2',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Presse à pectoraux (Chest Press Machine)',
@@ -107,7 +107,7 @@ const UpperBody: React.FC = () => {
     },
     {
       name: 'Entraînement haut du corps 3',
-      rest: '90 secondes entre chaque série',
+      rest: '90 secondes de pause entre chaque série',
       exercises: [
         {
           name: 'Développé couché à la barre',
@@ -166,10 +166,7 @@ const UpperBody: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge>
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
+                      <IonIcon icon={barbellOutline} />
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>

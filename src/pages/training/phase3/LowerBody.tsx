@@ -21,13 +21,13 @@ import {
   IonBackButton,
   IonButtons
 } from '@ionic/react';
-import { arrowBackOutline, checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkCircleOutline, timeOutline, barbellOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 interface Exercise {
   name: string;
   sets: number;
-  reps: number | string;
+  reps?: number | string;
   rest?: string;
   note?: string;
 }
@@ -46,12 +46,11 @@ const LowerBody: React.FC = () => {
   const trainingOptions: TrainingOption[] = [
     {
       name: 'Entraînement bas du corps 1',
-      rest: '2 min. entre chaque série',
+      rest: '2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Pyramide : 12, 10, 8, 6 répétitions'
         },
         {
@@ -63,13 +62,11 @@ const LowerBody: React.FC = () => {
         {
           name: 'Fente bulgare',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Pyramide : 12, 10, 8, 6 répétitions par jambe'
         },
         {
           name: 'Presse à cuisses',
           sets: 4,
-          reps: '8 lourdes + 12 légères',
           note: 'Bi-set : 8 répétitions lourdes suivies de 12 répétitions légères'
         },
         {
@@ -81,7 +78,7 @@ const LowerBody: React.FC = () => {
     },
     {
       name: 'Entraînement bas du corps 2',
-      rest: '2 min. entre chaque série',
+      rest: '2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Squat à la barre',
@@ -111,12 +108,11 @@ const LowerBody: React.FC = () => {
     },
     {
       name: 'Entraînement bas du corps 3',
-      rest: '2 min. entre chaque série',
+      rest: '2 min de pause entre chaque série',
       exercises: [
         {
           name: 'Soulevé de terre classique',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Pyramide : 12, 10, 8, 6 répétitions'
         },
         {
@@ -128,7 +124,6 @@ const LowerBody: React.FC = () => {
         {
           name: 'Hip trust',
           sets: 4,
-          reps: '12-10-8-6',
           note: 'Pyramide : 12, 10, 8, 6 répétitions (pont fessiers)'
         },
         {
@@ -173,10 +168,7 @@ const LowerBody: React.FC = () => {
                     </IonCardHeader>
                     <IonCardContent>
                       <IonBadge>
-                        <IonIcon icon={timeOutline} />
-                        {option.rest}
-                      </IonBadge>
-                      <IonBadge>
+                        <IonIcon icon={barbellOutline} />
                         {option.exercises.length} exercices
                       </IonBadge>
                     </IonCardContent>
