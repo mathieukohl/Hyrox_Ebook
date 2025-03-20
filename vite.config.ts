@@ -14,7 +14,7 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/Hyrox_Ebook/',
+        start_url: '/Hyrox_Ebook/introduction',
         scope: '/Hyrox_Ebook/',
         orientation: 'portrait',
         categories: ['fitness', 'sports', 'education'],
