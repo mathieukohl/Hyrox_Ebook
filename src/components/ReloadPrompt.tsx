@@ -9,13 +9,13 @@ function ReloadPrompt() {
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW({
-    onRegistered(registration) {
+    onRegistered(registration: ServiceWorkerRegistration | undefined) {
       // Check for updates every hour
       setInterval(() => {
         registration?.update();
       }, 60 * 60 * 1000);
     },
-    onRegisterError(error) {
+    onRegisterError(error: Error) {
       console.error('SW registration error', error);
     },
     onNeedRefresh() {
