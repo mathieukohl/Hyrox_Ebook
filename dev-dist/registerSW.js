@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/Hyrox_Ebook/dev-sw.js?dev-sw', { scope: '/Hyrox_Ebook/', type: 'classic' })

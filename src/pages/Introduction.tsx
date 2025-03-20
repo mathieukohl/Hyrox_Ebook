@@ -30,7 +30,7 @@ const Introduction: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>HYROX Training</IonTitle>
+          <IonTitle style={{ marginLeft: '5px' }}>HYROX Training</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
