@@ -59,6 +59,18 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/api/],
         navigationPreload: true,
         offlineGoogleAnalytics: false
+      },
+      devOptions: {
+        enabled: true,
+        type: 'module'
+      },
+      includeAssets: ['**/*'],
+      strategies: 'injectManifest',
+      injectRegister: 'auto',
+      minify: true,
+      filename: 'sw.js',
+      injectManifest: {
+        injectionPoint: undefined
       }
     })
   ],

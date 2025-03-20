@@ -39,6 +39,7 @@ import Header from './components/Header';
 // Auth
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+import ReloadPrompt from './components/ReloadPrompt';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -272,11 +273,12 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <IonApp>
-      <AuthProvider>
+    <AuthProvider>
+      <IonApp>
         <AppContent />
-      </AuthProvider>
-    </IonApp>
+        <ReloadPrompt />
+      </IonApp>
+    </AuthProvider>
   );
 };
 
