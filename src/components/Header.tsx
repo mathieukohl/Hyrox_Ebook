@@ -5,7 +5,7 @@ interface HeaderProps {
   title?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title = 'HYROX Training' }) => {
+const Header: React.FC<HeaderProps> = ({ title = 'M2 HYROX Training' }) => {
   return (
     <IonHeader>
       <IonToolbar>
