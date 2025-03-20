@@ -43,7 +43,7 @@ const Introduction: React.FC = () => {
             <IonCardSubtitle>Votre Guide Complet vers la Réussite</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent className="ion-text-center">
-            <p className="hero-text">
+            <p className="hero-text" style={{ marginTop: '20px' }}>
               HYROX est une course d'endurance unique qui combine la course à pied avec des
               exercices fonctionnels. Ce guide complet vous aidera à vous préparer et à
               exceller dans votre parcours HYROX.

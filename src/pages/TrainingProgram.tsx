@@ -78,7 +78,7 @@ const TrainingProgram: React.FC = () => {
             <IonCardSubtitle>Préparation HYROX</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
-            <p className="hero-text">
+            <p className="hero-text" style={{ marginTop: '20px' }}>
               Un programme structuré en trois phases pour vous préparer efficacement à votre course HYROX.
               Chaque phase est conçue pour développer des aspects spécifiques de votre performance.
             </p>

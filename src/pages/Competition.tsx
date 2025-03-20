@@ -64,7 +64,7 @@ const Competition: React.FC = () => {
             <IonCardSubtitle>Votre Guide de Préparation</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
-            <p className="hero-text">
+            <p className="hero-text" style={{ marginTop: '20px' }}>
               Le jour de la course est le moment de donner le meilleur de vous-même.
               Suivez ce guide pour vous assurer d'être parfaitement préparé.
             </p>
@@ -128,7 +128,7 @@ const Competition: React.FC = () => {
                       <IonCheckbox aria-label="Petit-déjeuner">
                         <IonLabel>
                           <h3>Petit-déjeuner</h3>
-                          <p>2-3h avant la course</p>
+                          <p>3- 4h avant la course</p>
                         </IonLabel>
                       </IonCheckbox>
                     </IonItem>
@@ -174,7 +174,6 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Pace de Course</h3>
                   <p>Maintenez un rythme régulier</p>
-                  <IonBadge >Rythme constant</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -182,7 +181,6 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Gestion de l'Effort</h3>
                   <p>Répartissez votre énergie</p>
-                  <IonBadge >80% effort</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -190,7 +188,6 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Nutrition</h3>
                   <p>Hydratation régulière</p>
-                  <IonBadge >Toutes les 20min</IonBadge>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -198,7 +195,6 @@ const Competition: React.FC = () => {
                 <IonLabel>
                   <h3>Objectifs</h3>
                   <p>Fixez des repères</p>
-                  <IonBadge >Par section</IonBadge>
                 </IonLabel>
               </IonItem>
             </IonList>

@@ -18,7 +18,8 @@ import {
   IonRow,
   IonCol,
   IonChip,
-  IonBadge
+  IonBadge,
+  IonButton
 } from '@ionic/react';
 import { barbellOutline, heartOutline, ribbonOutline, trophyOutline, timeOutline, speedometerOutline } from 'ionicons/icons';
 
@@ -37,17 +38,13 @@ const Understanding: React.FC = () => {
             <IonCardSubtitle>Une Course d'Endurance Fonctionnelle Unique</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
-            <p className="hero-text">
+            <p className="hero-text" style={{ marginTop: '20px' }}>
               HYROX est une course d'endurance fonctionnelle qui combine la course à pied avec
               des exercices fonctionnels. La course comprend 8 tours de course
               (1km chacun) suivis d'une station d'exercice fonctionnel. Ce format unique
               teste à la fois votre endurance et votre force fonctionnelle.
             </p>
             <div className="ion-text-center">
-              <IonChip >
-                <IonIcon icon={timeOutline} />
-                <IonLabel>60-90 minutes</IonLabel>
-              </IonChip>
               <IonChip >
                 <IonIcon icon={speedometerOutline} />
                 <IonLabel>8 km total</IonLabel>
@@ -129,6 +126,11 @@ const Understanding: React.FC = () => {
                   </IonItem>
                 </IonCardContent>
               </IonCard>
+              <div style={{ marginTop: '20px' }}>
+                <IonButton expand="block" routerLink="/training" color="primary">
+                  Je veux m'entraîner
+                </IonButton>
+              </div>
             </IonCol>
           </IonRow>
         </IonGrid>
