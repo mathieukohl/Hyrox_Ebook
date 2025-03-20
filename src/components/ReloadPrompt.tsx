@@ -1,35 +1,31 @@
-import { useRegisterSW } from 'virtual:pwa-register/react';
+import { useEffect, useState } from 'react';
 import { IonToast } from '@ionic/react';
-import { useState } from 'react';
 
 function ReloadPrompt() {
   const [showToast, setShowToast] = useState(false);
-  
-  const {
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
-  } = useRegisterSW({
-    onRegistered(registration: ServiceWorkerRegistration | undefined) {
-      // Check for updates every hour
-      setInterval(() => {
-        registration?.update();
-      }, 60 * 60 * 1000);
-    },
-    onRegisterError(error: Error) {
-      console.error('SW registration error', error);
-    },
-    onNeedRefresh() {
-      setShowToast(true);
-    },
-  });
 
-  const close = () => {
-    setShowToast(false);
-    setNeedRefresh(false);
-  };
+  useEffect(() => {
+    // Check for updates every hour
+    const interval = setInterval(() => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+          registration.update();
+        });
+      }
+    }, 60 * 60 * 1000);
+
+    // Listen for new service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        setShowToast(true);
+      });
+    }
+
+    return () => clearInterval(interval);
+  }, []);
 
   const update = () => {
-    updateServiceWorker(true);
+    window.location.reload();
     setShowToast(false);
   };
 
@@ -47,7 +43,7 @@ function ReloadPrompt() {
         {
           text: 'Plus tard',
           role: 'cancel',
-          handler: close
+          handler: () => setShowToast(false)
         }
       ]}
     />
