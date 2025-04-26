@@ -11,7 +11,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { calendarOutline, trophyOutline, fitnessOutline, settingsOutline } from 'ionicons/icons';
+import { calendarOutline, trophyOutline, fitnessOutline, settingsOutline, bookOutline, bodyOutline } from 'ionicons/icons';
 
 // Pages
 import Login from './pages/Login';
@@ -244,12 +244,12 @@ const AppContent: React.FC = () => {
               <IonLabel>Introduction</IonLabel>
             </IonTabButton>
             <IonTabButton tab="understanding" href="/understanding">
-              <IonIcon icon={fitnessOutline} />
+              <IonIcon icon={bookOutline} />
               <IonLabel>Comprendre</IonLabel>
             </IonTabButton>
             <IonTabButton tab="training" href="/training">
               <IonIcon icon={fitnessOutline} />
-              <IonLabel>Entraînement</IonLabel>
+              <IonLabel>Programme</IonLabel>
             </IonTabButton>
             <IonTabButton tab="competition" href="/competition">
               <IonIcon icon={trophyOutline} />

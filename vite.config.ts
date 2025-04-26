@@ -14,8 +14,8 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/Hyrox_Ebook/introduction',
-        scope: '/Hyrox_Ebook/',
+        start_url: '/introduction',
+        scope: '/',
         orientation: 'portrait',
         categories: ['fitness', 'sports', 'education'],
         prefer_related_applications: false,
@@ -55,7 +55,7 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         skipWaiting: true,
         clientsClaim: true,
-        navigateFallback: '/Hyrox_Ebook/index.html',
+        navigateFallback: '/index.html',
         navigateFallbackDenylist: [/^\/api/],
         navigationPreload: true,
         offlineGoogleAnalytics: false
@@ -69,7 +69,7 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  base: '/Hyrox_Ebook/',
+  base: '/',
   assetsInclude: ['**/*.png'],
   build: {
     assetsDir: 'assets',

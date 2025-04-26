@@ -80,13 +80,13 @@ define(['./workbox-6859ba38'], (function (workbox) { 'use strict';
    */
   workbox.precacheAndRoute([{
     "url": "registerSW.js",
-    "revision": "96a987f02fe434b9aea2f1e1105e5841"
+    "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
-    "url": "/Hyrox_Ebook/index.html",
-    "revision": "0.540ej36q1j8"
+    "url": "/index.html",
+    "revision": "0.9551ne6n12g"
   }], {});
   workbox.cleanupOutdatedCaches();
-  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/Hyrox_Ebook/index.html"), {
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/index.html"), {
     allowlist: [/^\/$/],
     denylist: [/^\/api/]
   }));

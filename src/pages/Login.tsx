@@ -153,6 +153,14 @@ const Login: React.FC = () => {
                     <IonButton 
                       expand="block" 
                       fill="outline" 
+                      className="ion-margin-bottom"
+                      onClick={() => window.open('https://www.notion.so/kohlmathieu/Le-Guide-Ultime-pour-R-ussir-Votre-Premi-re-Comp-tition-gratuit-1a05d7008ac780ac9a34d4e7c7991cff?pvs=4', '_blank')}
+                    >
+                      Pas encore membre ? Rejoignez-nous
+                    </IonButton>
+                    <IonButton 
+                      expand="block" 
+                      fill="outline" 
                       onClick={handleResetPassword}
                     >
                       Réinitialiser le mot de passe
