@@ -68,7 +68,7 @@ const TrainingProgram: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>Programme d'Entraînement</IonTitle>
+          <IonTitle style={{ marginLeft: '30px' }}>Programme d'Entraînement</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

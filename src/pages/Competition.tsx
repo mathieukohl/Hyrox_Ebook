@@ -54,7 +54,7 @@ const Competition: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>Préparation Course</IonTitle>
+          <IonTitle style={{ marginLeft: '30px' }}>Préparation Course</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -68,16 +68,25 @@ const Competition: React.FC = () => {
               Le jour de la course est le moment de donner le meilleur de vous-même.
               Suivez ce guide pour vous assurer d'être parfaitement préparé.
             </p>
-            <div className="ion-text-center">
-              <IonChip >
-                <IonIcon icon={timeOutline} />
-                <IonLabel>Arrivez 2h avant</IonLabel>
-              </IonChip>
-              <IonChip >
-                <IonIcon icon={trophyOutline} />
-                <IonLabel>Objectif atteignable</IonLabel>
-              </IonChip>
-            </div>
+            <IonGrid>
+              <IonRow className="ion-justify-content-center ion-align-items-center">
+                {/* Premier chip */}
+                <IonCol size="auto">
+                  <IonChip className="ion-padding">
+                    <IonIcon icon={timeOutline} />
+                    <IonLabel>Arrivez 2h avant</IonLabel>
+                  </IonChip>
+                </IonCol>
+
+                {/* Second chip, décalé d’1 colonne à partir de md */}
+                <IonCol size="auto" offsetMd="1">
+                  <IonChip className="ion-padding">
+                    <IonIcon icon={trophyOutline} />
+                    <IonLabel>Objectif atteignable</IonLabel>
+                  </IonChip>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
           </IonCardContent>
         </IonCard>
 
@@ -170,28 +179,28 @@ const Competition: React.FC = () => {
           <IonCardContent>
             <IonList>
               <IonItem>
-                <IonIcon slot="start" icon={timeOutline} />
+                <IonIcon className='ion-margin-end' slot="start" icon={timeOutline} />
                 <IonLabel>
                   <h3>Pace de Course</h3>
                   <p>Maintenez un rythme régulier</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
-                <IonIcon slot="start" icon={heartOutline} />
+                <IonIcon className='ion-margin-end' slot="start" icon={heartOutline} />
                 <IonLabel>
                   <h3>Gestion de l'Effort</h3>
                   <p>Répartissez votre énergie</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
-                <IonIcon slot="start" icon={nutritionOutline} />
+                <IonIcon className='ion-margin-end' slot="start" icon={nutritionOutline} />
                 <IonLabel>
                   <h3>Nutrition</h3>
                   <p>Hydratation régulière</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
-                <IonIcon slot="start" icon={trophyOutline} />
+                <IonIcon className='ion-margin-end' slot="start" icon={trophyOutline} />
                 <IonLabel>
                   <h3>Objectifs</h3>
                   <p>Fixez des repères</p>

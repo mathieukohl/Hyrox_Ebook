@@ -82,7 +82,7 @@ const Phase3: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonButton slot="start" fill="clear" onClick={() => history.goBack()}>
+          <IonButton className="ion-margin-start ion-margin-end"  slot="start" fill="clear" onClick={() => history.goBack()}>
             <IonIcon icon={arrowBackOutline} />
           </IonButton>
           <IonTitle>Phase 3 : Performance</IonTitle>
@@ -94,7 +94,7 @@ const Phase3: React.FC = () => {
             <IonCardTitle>Semaines 9-12</IonCardTitle>
             <IonCardSubtitle>Performance</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>
+          <IonCardContent className='ion-margin-top'>
             <p className="hero-text">
               Cette phase finale est conçue pour maximiser votre performance.
               Les séances sont optimisées pour la compétition avec une attention particulière
@@ -128,7 +128,7 @@ const Phase3: React.FC = () => {
                                 </IonBadge>
                               )}
                               {day.intensity && !day.link && (
-                                <IonBadge color="tertiary">
+                                <IonBadge>
                                   <IonIcon icon={fitnessOutline} />
                                   {day.intensity}
                                 </IonBadge>

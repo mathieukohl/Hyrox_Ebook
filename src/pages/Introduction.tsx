@@ -30,7 +30,7 @@ const Introduction: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle style={{ marginLeft: '5px' }}>HYROX Training</IonTitle>
+          <IonTitle style={{ marginLeft: '30px' }}>HYROX Training</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -39,7 +39,7 @@ const Introduction: React.FC = () => {
             <IonAvatar className="hero-avatar">
               <img src={hyroxLogo} alt="HYROX Logo" />
             </IonAvatar>
-            <IonCardSubtitle>Votre Guide Complet vers la Réussite</IonCardSubtitle>
+            <IonCardSubtitle className='ion-margin-top'>Votre Guide Complet vers la Réussite</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent className="ion-text-center">
             <p className="hero-text" style={{ marginTop: '20px' }}>
@@ -64,7 +64,7 @@ const Introduction: React.FC = () => {
               <h2 className="section-title">Ce que Vous Apprendrez</h2>
             </IonCol>
           </IonRow>
-          <IonRow>
+          <IonRow className="ion-justify-content-center">
             <IonCol size="12" sizeMd="6" sizeLg="3">
               <IonCard className="feature-card">
                 <IonCardContent>
@@ -85,7 +85,7 @@ const Introduction: React.FC = () => {
                     <IonIcon slot="start" icon={trophy} className="feature-icon" />
                     <IonLabel>
                       <h3>Techniques Avancées</h3>
-                      <p>Maîtrisez chaque mouvement</p>
+                      <p>Maîtrisez chaque mouvement parfaitement</p>
                     </IonLabel>
                   </IonItem>
                 </IonCardContent>

@@ -28,7 +28,7 @@ const Understanding: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>Comprendre HYROX</IonTitle>
+          <IonTitle style={{ marginLeft: '30px' }}>Comprendre L'HYROX</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -45,7 +45,7 @@ const Understanding: React.FC = () => {
               teste à la fois votre endurance et votre force fonctionnelle.
             </p>
             <div className="ion-text-center">
-              <IonChip >
+              <IonChip className='ion-padding'>
                 <IonIcon icon={speedometerOutline} />
                 <IonLabel>8 km total</IonLabel>
               </IonChip>
@@ -126,13 +126,13 @@ const Understanding: React.FC = () => {
                   </IonItem>
                 </IonCardContent>
               </IonCard>
-              <div style={{ marginTop: '20px' }}>
-                <IonButton expand="block" routerLink="/training" color="primary">
-                  Je veux m'entraîner
-                </IonButton>
-              </div>
             </IonCol>
           </IonRow>
+          <div style={{ maxWidth: '250px', margin: '0 auto' }}>
+            <IonButton expand="block" routerLink="/training" color="primary">
+              Je veux m'entraîner
+            </IonButton>
+          </div>
         </IonGrid>
       </IonContent>
     </IonPage>

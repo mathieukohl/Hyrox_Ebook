@@ -82,7 +82,7 @@ const Phase2: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonButton slot="start" fill="clear" onClick={() => history.goBack()}>
+          <IonButton className="ion-margin-start ion-margin-end"  slot="start" fill="clear" onClick={() => history.goBack()}>
             <IonIcon icon={arrowBackOutline} />
           </IonButton>
           <IonTitle>Phase 2 : Intensification</IonTitle>
@@ -94,7 +94,7 @@ const Phase2: React.FC = () => {
             <IonCardTitle>Semaines 5-8</IonCardTitle>
             <IonCardSubtitle>Intensification</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>
+          <IonCardContent className='ion-margin-top'>
             <p className="hero-text">
               Cette deuxième phase marque une intensification de l'entraînement.
               Les séances sont plus longues et plus intenses pour développer votre endurance et votre force.
@@ -127,7 +127,7 @@ const Phase2: React.FC = () => {
                                 </IonBadge>
                               )}
                               {day.intensity && !day.link && (
-                                <IonBadge color="tertiary">
+                                <IonBadge>
                                   <IonIcon icon={fitnessOutline} />
                                   {day.intensity}
                                 </IonBadge>

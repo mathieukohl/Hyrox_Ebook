@@ -82,7 +82,7 @@ const Phase1: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonButton slot="start" fill="clear" onClick={() => history.goBack()}>
+          <IonButton className="ion-margin-start ion-margin-end" slot="start" fill="clear" onClick={() => history.goBack()}>
             <IonIcon icon={arrowBackOutline} />
           </IonButton>
           <IonTitle>Phase 1 : Fondation</IonTitle>
@@ -94,7 +94,7 @@ const Phase1: React.FC = () => {
             <IonCardTitle>Semaines 1-4</IonCardTitle>
             <IonCardSubtitle>Construction des bases</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>
+          <IonCardContent className='ion-margin-top'>
             <p className="hero-text">
               Cette première phase est consacrée à la construction des bases fondamentales.
               L'accent est mis sur l'endurance de base et l'apprentissage des mouvements essentiels.
@@ -127,7 +127,7 @@ const Phase1: React.FC = () => {
                                 </IonBadge>
                               )}
                               {day.intensity && (
-                                <IonBadge color="tertiary">
+                                <IonBadge>
                                   <IonIcon icon={fitnessOutline} />
                                   {day.intensity}
                                 </IonBadge>
