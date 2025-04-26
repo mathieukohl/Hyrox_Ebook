@@ -10,7 +10,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy:prod": "npm run build && rsync -avz --delete dist/ 9s1i0_kohlmathieu@9s1i0.ftp.infomaniak.com:~/sites/m2-coaching.ch"
   },
   "dependencies": {
     "@firebase/auth": "^1.9.1",
