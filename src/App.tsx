@@ -32,6 +32,7 @@ import UpperBodyPhase3 from './pages/training/phase3/UpperBody';
 import LowerBodyPhase3 from './pages/training/phase3/LowerBody';
 import HyroxSpecificPhase3 from './pages/training/phase3/HyroxSpecific';
 import AdminPanel from './pages/AdminPanel';
+import Profile from './pages/Profile';
 
 // Components
 import Header from './components/Header';
@@ -228,6 +229,15 @@ const AppContent: React.FC = () => {
               component={(props: any) => (
                 <PrivateLayout>
                   <Competition {...props} />
+                </PrivateLayout>
+              )} 
+            />
+            <PrivateRoute 
+              exact 
+              path="/profile" 
+              component={(props: any) => (
+                <PrivateLayout>
+                  <Profile {...props} />
                 </PrivateLayout>
               )} 
             />

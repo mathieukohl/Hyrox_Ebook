@@ -158,13 +158,7 @@ const Login: React.FC = () => {
                     >
                       Pas encore membre ? Rejoignez-nous
                     </IonButton>
-                    <IonButton 
-                      expand="block" 
-                      fill="outline" 
-                      onClick={handleResetPassword}
-                    >
-                      Réinitialiser le mot de passe
-                    </IonButton>
+                  
                   </form>
                 </IonCardContent>
               </IonCard>

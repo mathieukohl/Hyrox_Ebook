@@ -24,6 +24,7 @@ import {
 } from '@ionic/react';
 import { calendarOutline, barbellOutline, trophyOutline, timeOutline, fitnessOutline, heartOutline, arrowForwardOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
+import Header from '../components/Header';
 
 interface Phase {
   title: string;
@@ -66,11 +67,7 @@ const TrainingProgram: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle style={{ marginLeft: '30px' }}>Programme d'Entraînement</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header /> 
       <IonContent className="ion-padding">
         <IonCard className="hero-card">
           <IonCardHeader className="ion-text-center">

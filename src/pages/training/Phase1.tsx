@@ -82,7 +82,7 @@ const Phase1: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonButton className="ion-margin-start ion-margin-end" slot="start" fill="clear" onClick={() => history.goBack()}>
+          <IonButton slot="start" fill="clear" onClick={() => history.goBack()}>
             <IonIcon icon={arrowBackOutline} />
           </IonButton>
           <IonTitle>Phase 1 : Fondation</IonTitle>

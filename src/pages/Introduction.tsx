@@ -22,17 +22,14 @@ import {
 import { arrowForward, fitness, trophy, time, heart } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import hyroxLogo from '../assets/hyrox_logo.png';
+import Header from '../components/Header';
 
 const Introduction: React.FC = () => {
   const history = useHistory();
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle style={{ marginLeft: '30px' }}>HYROX Training</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header />    
       <IonContent className="ion-padding">
         <IonCard className="hero-card">
           <IonCardHeader className="ion-text-center">

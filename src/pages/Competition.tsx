@@ -27,6 +27,7 @@ import { listOutline, trophyOutline, timeOutline, heartOutline, nutritionOutline
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useHistory } from 'react-router-dom';
+import Header from '../components/Header';
 
 const Competition: React.FC = () => {
   const [present] = useIonToast();
@@ -52,11 +53,7 @@ const Competition: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle style={{ marginLeft: '30px' }}>Préparation Course</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header /> 
       <IonContent className="ion-padding">
         <IonCard className="hero-card">
           <IonCardHeader className="ion-text-center">
@@ -209,18 +206,6 @@ const Competition: React.FC = () => {
             </IonList>
           </IonCardContent>
         </IonCard>
-
-        <div className="ion-text-center ion-padding">
-          <IonButton 
-            expand="block" 
-            color="medium" 
-            fill="clear"
-            onClick={handleLogout}
-          >
-            <IonIcon slot="start" icon={logOutOutline} />
-            Se déconnecter
-          </IonButton>
-        </div>
       </IonContent>
     </IonPage>
   );

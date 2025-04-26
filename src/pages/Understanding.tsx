@@ -22,15 +22,12 @@ import {
   IonButton
 } from '@ionic/react';
 import { barbellOutline, heartOutline, ribbonOutline, trophyOutline, timeOutline, speedometerOutline } from 'ionicons/icons';
+import Header from '../components/Header';
 
 const Understanding: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle style={{ marginLeft: '30px' }}>Comprendre L'HYROX</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header /> 
       <IonContent className="ion-padding">
         <IonCard className="hero-card">
           <IonCardHeader className="ion-text-center">
