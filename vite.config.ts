@@ -14,8 +14,8 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/introduction',
-        scope: '/',
+        start_url: '/Hyrox_Ebook/introduction',
+        scope: '/Hyrox_Ebook/',
         orientation: 'portrait',
         categories: ['fitness', 'sports', 'education'],
         prefer_related_applications: false,
@@ -69,7 +69,7 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  base: '/',
+  base: '/Hyrox_Ebook/',
   assetsInclude: ['**/*.png'],
   build: {
     assetsDir: 'assets',
